@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Finder</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.css" />
+    <!-- Leaflet Routing Machine CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css" />
+    <!-- Google Fonts - Orbitron -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Indian Hackathon Explorer</h1>
+    </header>
+
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        🌙
+    </button>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter hackathon name...">
+        <button class="search-button" onclick="searchHackathon()">Search Hackathon</button>
+    </div>
+
+    <div class="container">
+        <div class="hackathon-list" id="hackathon-list">
+            <!-- Hackathon cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <div class="modal" id="mapModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeMapModal">&times;</span>
+            <h2 id="modalTitle" style="color: #ff69b4; text-shadow: 0px 0px 5px rgba(255, 105, 180, 0.7);">Route to
+                Hackathon</h2>
+            <div id="map"></div>
+            <div class="location-status" id="locationStatus">Getting your location...</div>
+            <div id="pathComparison" class="path-comparison">
+                <h3>Path Comparison</h3>
+                <div id="algorithmResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comparison-modal" id="comparisonModal">
+        <div class="comparison-content">
+            <span class="comparison-close" onclick="closeComparisonModal()">&times;</span>
+            <h2 style="color: #ff69b4; margin-bottom: 20px;">Route Comparison</h2>
+            <div id="routeComparison"></div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js"></script>
+    <!-- Leaflet Routing Machine JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
